@@ -45,7 +45,7 @@ public class StepDefinitions {
     public void the_user_enter_the_product_name() throws  InterruptedException {
        homePage = new HomePage(driver);
        Thread.sleep(2000);
-       homePage.getClick().click();
+        homePage.getClick().click();
         homePage.getSearchBox().sendKeys(data.get("testvalue"));
         homePage.getClickOn().click();
 
@@ -53,7 +53,6 @@ public class StepDefinitions {
     }
     @Then("the product result should be displayed")
     public void the_product_result_should_be_displayed() {
-
         String text = homePage.getSearchResult().getText();
         Assert.assertEquals(text,"mobiles");
     }
@@ -113,4 +112,21 @@ public class StepDefinitions {
     }
 
 
+    @When("the user enters {string}")
+    public void theUserEnters(String product1) throws InterruptedException {
+        homePage = new HomePage(driver);
+        Thread.sleep(2000);
+        homePage.getPop().click();
+        homePage.getExplore().sendKeys(product1);
+        homePage.getSnap().click();
+
+
+    }
+
+    @Then("user display the message")
+    public void userDisplayTheMessage() {
+        WebElement text = homePage.getOutcome();
+        Assert.assertTrue(text.isDisplayed());
+
+    }
 }

@@ -28,3 +28,12 @@ Feature: Search a product feature
     When the user  write the product name
     Then the result should displayed
 
+  Scenario Outline:
+    Given the user navigates to the home page
+    When  the user enters "<product1>"
+    Then user display the message
+    Examples:
+      |product1|
+      |jeans   |
+      |bags    |
+

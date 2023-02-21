@@ -33,7 +33,7 @@ public class HomePage {
     @FindBy(xpath = "//input[@class='_3704LK']")
     WebElement searchBox;
 
-    @FindBy(xpath = "//button[@class='L0Z3Pu']")
+    @FindBy(xpath = "//button [@class='L0Z3Pu']")
     WebElement ClickOn;
 
     public WebElement getClickOn() {
@@ -104,5 +104,33 @@ public class HomePage {
 
     public WebElement getOutput() {
         return output;
+    }
+
+    public WebElement getPop() {
+        return pop;
+    }
+
+    @FindBy(xpath = "//button[@class='_2KpZ6l _2doB4z']")
+    WebElement pop;
+
+    @FindBy(xpath = "//input[@class='_3704LK']")
+    WebElement explore;
+
+    public WebElement getExplore() {
+        return explore;
+    }
+
+    @FindBy(xpath = "//button[@class='L0Z3Pu']")
+    WebElement snap;
+
+    public WebElement getSnap() {
+        return snap;
+    }
+
+    @FindBy(xpath = "//span[@class=\"_10Ermr\"]//span")
+    WebElement outcome;
+
+    public WebElement getOutcome() {
+        return outcome;
     }
 }
