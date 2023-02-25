@@ -9,6 +9,8 @@ import io.cucumber.java.en.When;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import pages.HomePage;
 import utils.BrowserManager;
@@ -42,9 +44,11 @@ public class StepDefinitions {
 
     }
     @When("the user enter the product name")
-    public void the_user_enter_the_product_name() throws  InterruptedException {
+    public void the_user_enter_the_product_name()  {
        homePage = new HomePage(driver);
-       Thread.sleep(2000);
+       //Thread.sleep(2000);
+        WebDriverWait wait = new WebDriverWait(driver, 5);
+        wait.until(ExpectedConditions.visibilityOf(homePage.getClick()));
         homePage.getClick().click();
         homePage.getSearchBox().sendKeys(data.get("testvalue"));
         homePage.getClickOn().click();
